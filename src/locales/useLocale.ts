@@ -29,7 +29,6 @@ function setI18nLanguage(locale: LocaleType) {
 export function useLocale() {
   const localeStore = useLocaleStoreWithOut();
   const getLocale = computed(() => localeStore.getLocale);
-  const getShowLocalePicker = computed(() => localeStore.getShowPicker);
 
   const getAntdLocale = computed((): any => {
     return i18n.global.getLocaleMessage(unref(getLocale))?.antdLocale ?? {};
@@ -62,7 +61,6 @@ export function useLocale() {
 
   return {
     getLocale,
-    getShowLocalePicker,
     changeLocale,
     getAntdLocale,
   };

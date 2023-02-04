@@ -60,7 +60,6 @@ export interface HeaderSetting {
 }
 
 export interface LocaleSetting {
-  showPicker: boolean;
   // Current language
   locale: LocaleType;
   // default language

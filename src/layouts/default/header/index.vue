@@ -41,13 +41,6 @@
 
       <FullScreen v-if="getShowFullScreen" :class="`${prefixCls}-action__item fullscreen-item`" />
 
-      <AppLocalePicker
-        v-if="getShowLocalePicker"
-        :reload="true"
-        :showText="false"
-        :class="`${prefixCls}-action__item`"
-      />
-
       <UserDropDown :theme="getHeaderTheme" />
 
       <SettingDrawer v-if="getShowSetting" :class="`${prefixCls}-action__item`" />
@@ -79,7 +72,6 @@
   import { useDesign } from '/@/hooks/web/useDesign';
 
   import { createAsyncComponent } from '/@/utils/factory/createAsyncComponent';
-  import { useLocale } from '/@/locales/useLocale';
 
   export default defineComponent({
     name: 'LayoutHeader',
@@ -125,8 +117,6 @@
         getShowHeader,
         getShowSearch,
       } = useHeaderSetting();
-
-      const { getShowLocalePicker } = useLocale();
 
       const { getIsMobile } = useAppInject();
 
@@ -183,7 +173,6 @@
         getSplit,
         getMenuMode,
         getShowTopMenu,
-        getShowLocalePicker,
         getShowFullScreen,
         getShowNotice,
         getUseErrorHandle,
