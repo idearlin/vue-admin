@@ -6,7 +6,6 @@
     :showSelectAll="showSelectAll"
     :selectedKeys="selectedKeys"
     :targetKeys="getTargetKeys"
-    :showSearch="showSearch"
     @change="handleChange"
   />
 </template>
@@ -36,7 +35,6 @@
       resultField: propTypes.string.def(''),
       labelField: propTypes.string.def('title'),
       valueField: propTypes.string.def('key'),
-      showSearch: { type: Boolean, default: false },
       disabled: { type: Boolean, default: false },
       filterOption: {
         type: Function as PropType<(inputValue: string, item: TransferItem) => boolean>,
